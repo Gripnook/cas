@@ -1,5 +1,5 @@
 CXX := clang++
-CXXFLAGS := -std=c++14 -stdlib=libc++ -Wall -Wextra -pedantic -g
+CXXFLAGS := -std=c++1y -stdlib=libc++ -Wall -Wextra -pedantic -g
 LIBFLAGS := -lreadline
 
 TARGET := cas
