@@ -1,4 +1,5 @@
 # Computer Algebra System
+CEGEP Comprehensive Assessment project (2014)
 
 Predefined functions:
 +, -, *, / : Arithmetic operators.
