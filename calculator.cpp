@@ -1,11 +1,3 @@
-//
-//  calculator.cpp
-//  CAS
-//
-//  Created by Andrei Purcarus on 2014-04-04.
-//  Copyright (c) 2014 Andrei Purcarus. All rights reserved.
-//
-
 #include <string>
 #include "Calculator.h"
 #include "Misc.h"
@@ -13,67 +5,67 @@ using namespace std;
 
 Calculator::Calculator()
 {
-	mode = "rad";
-	error = '0';
-	divisions = 10;
-	answer = 0;
-	fanswer = " ";
-	memory = 0;
-	fmemory = " ";
+    mode = "rad";
+    error = '0';
+    divisions = 10;
+    answer = 0;
+    fanswer = " ";
+    memory = 0;
+    fmemory = " ";
 }
 
 void Calculator::set_mode(const string& new_mode)
 {
-	if (lower(new_mode) == "rad" || lower(new_mode) == "deg")
-	{
-		mode = lower(new_mode);
-	}
-	else
-	{
-		error = 'C';
-	}
-	return;
+    if (lower(new_mode) == "rad" || lower(new_mode) == "deg")
+    {
+        mode = lower(new_mode);
+    }
+    else
+    {
+        error = 'C';
+    }
+    return;
 }
 
 void Calculator::set_answer(const long double& value)
 {
-	answer = value;
-	return;
+    answer = value;
+    return;
 }
-		
+        
 long double Calculator::get_answer()
 {
-	return answer;
+    return answer;
 }
 void Calculator::set_memory(const long double& value)
 {
-	memory = value;
-	return;
+    memory = value;
+    return;
 }
 
 void Calculator::set_fmemory(const string& function)
 {
-	fmemory = function;
-	return;
+    fmemory = function;
+    return;
 }
-		
+        
 void Calculator::set_divisions(const int& new_divisions)
 {
-	divisions = new_divisions;
-	return;
+    divisions = new_divisions;
+    return;
 }
 
 int Calculator::get_divisions()
 {
-	return divisions;
+    return divisions;
 }
 
 void Calculator::reset_error()
 {
-	error = '0';
+    error = '0';
 }
 
 char Calculator::get_error()
 {
-	return error;
+    return error;
 }

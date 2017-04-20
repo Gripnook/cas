@@ -1,11 +1,3 @@
-//
-//  Misc.h
-//  CAS
-//
-//  Created by Andrei Purcarus on 2014-04-04.
-//  Copyright (c) 2014 Andrei Purcarus. All rights reserved.
-//
-
 #include <string>
 using namespace std;
 

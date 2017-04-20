@@ -1,11 +1,3 @@
-//
-//  misc.cpp
-//  CAS
-//
-//  Created by Andrei Purcarus on 2014-04-04.
-//  Copyright (c) 2014 Andrei Purcarus. All rights reserved.
-//
-
 #include <string>
 #include <sstream>
 #include <cctype>
@@ -15,80 +7,80 @@ using namespace std;
 
 string remove_space(const string& inputstr)
 {
-	string result = inputstr;
-	for (unsigned long i = 0; i < result.length(); i++)
-	{
-		if (result.at(i) == ' ')
-		{
-			result.erase(i, 1);
-			i--;
-		}
-	}
-	return result;
+    string result = inputstr;
+    for (unsigned long i = 0; i < result.length(); i++)
+    {
+        if (result.at(i) == ' ')
+        {
+            result.erase(i, 1);
+            i--;
+        }
+    }
+    return result;
 }
 
 string lower(const string& inputstr)
 {
-	string result = inputstr;
-	for (unsigned long i = 0; i < result.length(); i++)
-	{
-		result.at(i) = tolower(inputstr.at(i));
-	}
-	return result;
+    string result = inputstr;
+    for (unsigned long i = 0; i < result.length(); i++)
+    {
+        result.at(i) = tolower(inputstr.at(i));
+    }
+    return result;
 }
 
 string destroy_end_brackets(const string& inputstr)
 {
-	string result = inputstr;
-	if (result.empty())
-	{
-		return result;
-	}
-	if (result.at(0) != '(' || result.at(result.length() - 1) != ')')
-	{
-		return result;
-	}
-	int check = 0;
-	for (unsigned long i = 1; i < result.length() - 1; i++)
-	{
-		if (result.at(i) == '(')
-		{
-			check++;
-		}
-		if (result.at(i) == ')')
-		{
-			check--;
-		}
-		if (check < 0)
-		{
-			break;
-		}
-	}
-	if (result.at(0) == '(' && result.at(result.length() - 1) == ')' && check >= 0)
-	{
-		result = destroy_end_brackets(result.substr(1, result.length() - 2));
-	}
-	return result;
+    string result = inputstr;
+    if (result.empty())
+    {
+        return result;
+    }
+    if (result.at(0) != '(' || result.at(result.length() - 1) != ')')
+    {
+        return result;
+    }
+    int check = 0;
+    for (unsigned long i = 1; i < result.length() - 1; i++)
+    {
+        if (result.at(i) == '(')
+        {
+            check++;
+        }
+        if (result.at(i) == ')')
+        {
+            check--;
+        }
+        if (check < 0)
+        {
+            break;
+        }
+    }
+    if (result.at(0) == '(' && result.at(result.length() - 1) == ')' && check >= 0)
+    {
+        result = destroy_end_brackets(result.substr(1, result.length() - 2));
+    }
+    return result;
 }
 
 string minus_to_plus(const string& inputstr)
 {
-	string result = inputstr;
-	if (result.length() > 1 && result.at(0) == '(' && result.at(1) != '-')
-	{
-		result = destroy_end_brackets(result);
-	}
-	int bracket_count = 0;
-	for (unsigned long i = 0; i < result.length(); i++)
-	{
-		if (result.at(i) == '(')
-		{
-			bracket_count++;
-		}
-		if (result.at(i) == ')')
-		{
-			bracket_count--;
-		}
+    string result = inputstr;
+    if (result.length() > 1 && result.at(0) == '(' && result.at(1) != '-')
+    {
+        result = destroy_end_brackets(result);
+    }
+    int bracket_count = 0;
+    for (unsigned long i = 0; i < result.length(); i++)
+    {
+        if (result.at(i) == '(')
+        {
+            bracket_count++;
+        }
+        if (result.at(i) == ')')
+        {
+            bracket_count--;
+        }
         if ((i < 2) || (result.at(i-1) == 'e' && !is_actualnum(result.at(i-2))) || (result.at(i-1) != 'e'))
         {
             if (bracket_count == 0 && result.at(i) == '-')
@@ -98,16 +90,16 @@ string minus_to_plus(const string& inputstr)
                 i--;
             }
         }
-	}
-	return result;
+    }
+    return result;
 }
 
 bool numerical(const string& inputstr)
 {
-	if (inputstr.length() == 1 && inputstr.at(0) == '-')
-	{
-		return false;
-	}
+    if (inputstr.length() == 1 && inputstr.at(0) == '-')
+    {
+        return false;
+    }
     int e_count = 0;
     long e_loc = -1;
     for (unsigned long i = 0; i < inputstr.length(); i++)
@@ -168,31 +160,31 @@ bool is_actualnum(const char& character)
 
 bool is_brackets(const string& inputstr)
 {
-	string input = inputstr;
-	for (unsigned long i = 0; i < input.length(); i++)
-	{
-		if (input.at(i) != '(' && input.at(i) != ')')
-		{
-			return false;
-		}
-	}
-	return true;
+    string input = inputstr;
+    for (unsigned long i = 0; i < input.length(); i++)
+    {
+        if (input.at(i) != '(' && input.at(i) != ')')
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 string ftos(const long double& num)
 {
-	stringstream ss (stringstream::in | stringstream::out);
+    stringstream ss (stringstream::in | stringstream::out);
 
-	ss << num;
+    ss << num;
 
-	return ss.str();
+    return ss.str();
 }
 
 string sub(const string& last_input, const string& x)
 {
     string result = last_input;
-	for (int i = 0; i < static_cast<int>(result.length()); i++)
-	{
+    for (int i = 0; i < static_cast<int>(result.length()); i++)
+    {
         if (result.at(i) == 'x')
         {
             result.erase(i, 1);
@@ -200,6 +192,6 @@ string sub(const string& last_input, const string& x)
             result.insert(i, temp);
             i--;
         }
-	}
-	return result;
+    }
+    return result;
 }
