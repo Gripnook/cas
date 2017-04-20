@@ -1,5 +1,5 @@
 # Computer Algebra System
-A command line computer algebra system designed as a CEGEP Comprehensive Assessment project in 2014.
+A command line computer algebra system developed as a CEGEP Comprehensive Assessment project in 2014.
 
 ## Usage
 
