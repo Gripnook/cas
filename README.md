@@ -48,5 +48,5 @@ set divisions *integer*         : Sets the number of divisions
                                   for integral approximation to
                                   the value of integer.
 
-find root *f(x)* : Finds a root of the equation f(x) = 0.
+find root *f(x)* : Finds a solution of the equation f(x) = 0.
 ```
