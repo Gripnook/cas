@@ -31,22 +31,22 @@ mem : Value stored in memory.
 Special operations:
 
 ```
-end      : Ends program.
+end      : Ends the program.
 help     : Brings up help.
-mode rad : Sets mode to radians.
-mode deg : Sets mode to degrees.
-store    : Stores previous answer in memory.
-           One answer can be stored at a time.
+mode rad : Sets the mode to radians.
+mode deg : Sets the mode to degrees.
+store    : Stores the previous answer in memory.
+           Only one answer can be stored at a time.
 
-derive *f(x)*            : Returns symbolic derivative of f(x).
-derive *f(x)* at *value* : Returns derivative of f(x) at value.
+derive *f(x)*            : Returns the symbolic derivative of f(x).
+derive *f(x)* at *value* : Returns the derivative of f(x) at x = value.
 
 integrate *f(x)* from
-*lower bound* to *higher bound* : Returns integral of f(x) from
-                                  lower bound to higher bound.
+*lower bound* to *higher bound* : Returns the integral of f(x) from
+                                  x = lower bound to x = higher bound.
 set divisions *integer*         : Sets the number of divisions
                                   for integral approximation to
-                                  value of integer.
+                                  the value of integer.
 
-find root *f(x)* : Finds root of the equation f(x) = 0.
+find root *f(x)* : Finds a root of the equation f(x) = 0.
 ```
