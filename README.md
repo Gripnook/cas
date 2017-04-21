@@ -7,24 +7,30 @@ The program can be compiled by using the `make` utility. Note that this requires
 
 ## Features
 
-```
 Predefined functions:
-+, -, *, / : Arithmetic operators.
-abs()      : Absolute value function.
-()^()      : Power function.
-sqrt()     : Square root function.
-ln()       : Natural logarithm function.
 
-sin(), cos(), tan(), sec(), csc(), cot() : Trig functions.
-arcsin(), arccos(), arctan()             : Inverse trig functions.
+```
++, -, *, /, ^ : Arithmetic operators.
+abs(x)        : Absolute value function.
+sqrt(x)       : Square root function.
+ln(x)         : Natural logarithm function.
+
+sin(x), cos(x), tan(x), sec(x), csc(x), cot(x) : Trig functions.
+arcsin(x), arccos(x), arctan(x)                : Inverse trig functions.
+```
 
 Special characters:
+
+```
 e   : 2.71828
 pi  : 3.14159
-ans : previous answer
-mem : value stored in memory
+ans : Previous answer.
+mem : Value stored in memory.
+```
 
 Special operations:
+
+```
 end      : Ends program.
 help     : Brings up help.
 mode rad : Sets mode to radians.
